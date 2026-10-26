@@ -19,6 +19,10 @@ const sources = fs.readdirSync(sourceDir)
 if (sources.length === 0) throw new Error("No presentation source found.");
 
 fs.mkdirSync(outputDir, { recursive: true });
+for (const name of fs.readdirSync(outputDir)) {
+  if (name.endsWith(".html")) fs.rmSync(path.join(outputDir, name), { force: true });
+}
+
 for (const file of sources) {
   const source = path.join(sourceDir, file);
   const slug = file.replace(/\.md$/u, "");

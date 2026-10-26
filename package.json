@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "广东工业大学研究生选修课：微电子器件建模与仿真课程主页",
+  "description": "研究生选修课：微电子器件建模与仿真课程主页",
   "scripts": {
     "docs:slides": "node scripts/build_presentation.mjs",
-    "docs:build": "pnpm run docs:slides && vuepress-vite build src",
+    "docs:build": "node scripts/clean_build.mjs && pnpm run docs:slides && vuepress-vite build src",
     "docs:dev": "vuepress-vite dev src",
     "docs:clean": "vuepress-vite dev src --clean-cache"
   },

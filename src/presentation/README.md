@@ -8,7 +8,7 @@ title: 教学演示
 
 ## 课件目录
 
-- [课程导论](01-course-introduction.html)：课程目标、内容组织与考核方式
+- [第1章：Silvaco器件仿真软件功能介绍](01-silvaco-introduction.html)：TCAD、工艺仿真、光学模型和 SiC JBS 结果分析
 
 新增课件时，文件名使用两位数字前缀（例如 `02-device-models.md`），并保留以下 frontmatter：
 

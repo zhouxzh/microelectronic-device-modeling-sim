@@ -47,4 +47,11 @@ code { color: var(--accent-dark); background: var(--panel); }
 section.lead { justify-content: center; background: var(--accent-dark); color: #fff; }
 section.lead h1, section.lead h2 { color: #fff; }
 section.lead h1 { font-size: 58px; }
+
+section.result-slide { padding-top: 58px; }
+section.result-slide h1 { margin-bottom: 0.25em; }
+.result-pair { display: flex; gap: 24px; align-items: center; justify-content: center; height: 500px; }
+.result-pair img { max-width: 48%; max-height: 470px; object-fit: contain; }
+.result-single { display: flex; align-items: center; justify-content: center; height: 500px; }
+.result-single img { max-width: 92%; max-height: 470px; object-fit: contain; }
 section.lead h2 { color: #d9eef0; font-weight: 400; }

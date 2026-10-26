@@ -1,15 +1,6 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-  "/": [
-    "",
-    {
-      text: "课程资料",
-      icon: "book",
-      collapsible: false,
-      children: [""],
-    },
-  ],
   "/presentation/": [
     {
       text: "教学演示",
@@ -21,8 +12,8 @@ export default sidebar({
           link: "/presentation/",
         },
         {
-          text: "课程导论",
-          link: "/presentation/01-course-introduction.html",
+          text: "第1章：Silvaco器件仿真软件功能介绍",
+          link: "/presentation/01-silvaco-introduction.html",
         },
       ],
     },

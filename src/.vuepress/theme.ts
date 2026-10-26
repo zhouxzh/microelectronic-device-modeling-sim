@@ -6,15 +6,28 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
   hostname: "https://zhouxzh.github.io",
   author: {
-    name: "广东工业大学",
-    url: "https://www.gdut.edu.cn/",
+    name: "周贤中",
+    email: "zhouxzh@gdut.edu.cn",
+    url: "https://github.com/zhouxzh",
   },
   repo: "zhouxzh/microelectronic-device-modeling-sim",
   docsDir: "src",
   navbar,
   sidebar,
-  footer: "广东工业大学 · 微电子器件建模与仿真",
+  footer: "微电子器件建模与仿真",
   displayFooter: true,
+  lastUpdated: false,
+  contributors: false,
+  editLink: false,
+  navbarSocialInclude: ["github"],
+  plugins: {
+    git: {
+      createdTime: false,
+      updatedTime: false,
+      contributors: false,
+      changelog: false,
+    },
+  },
   markdown: {
     attrs: true,
     codeTabs: true,
