@@ -75,26 +75,96 @@ toc: false
   </div>
 </section>
 
-<section class="course-chapter">
-  <div class="course-chapter__inner">
+<section id="chapters" class="course-section course-chapters">
+  <div class="course-chapters__head">
     <div>
-      <p class="course-eyebrow">Chapter 01</p>
-      <h2>Silvaco 器件仿真软件功能介绍</h2>
-      <p>从 TCAD 在半导体开发中的位置出发，依次理解工艺仿真、器件结构、光学模型和 SiC JBS 结果分析。</p>
-      <ul class="course-chapter__list">
-        <li>TCAD 与实验、SPICE 模型之间的关系</li>
-        <li>结构、网格、材料和工艺历史如何形成仿真输入</li>
-        <li>光学模型与多物理场仿真的选择原则</li>
-        <li>SiC JBS 的电场、电势、电流密度和击穿曲线</li>
-      </ul>
-      <div class="course-actions">
-        <a class="primary" href="/microelectronic-device-modeling-sim/presentation/01-silvaco-introduction.html">打开第 1 章课件</a>
-      </div>
+      <p class="course-eyebrow">Courseware</p>
+      <h2>八章课件，从软件概览到功率器件综合</h2>
     </div>
-    <figure class="course-chapter__figure">
-      <img :src="$withBase('/images/chapter-sic-jbs.png')" alt="不同保护环数量下 SiC JBS 的反向电流电压仿真曲线">
-      <figcaption>课程案例：SiC JBS 保护环与击穿电压仿真</figcaption>
-    </figure>
+    <p class="course-section__intro">每章按三个 45 分钟教学节组织，包含理论讲解、软件界面、仿真结果、课堂检查点和正式参考文献。</p>
+  </div>
+
+  <div class="chapter-grid">
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/circuit-board.svg')" alt="" aria-hidden="true">
+        <span>Chapter 01</span>
+        <span>34 页</span>
+      </div>
+      <h3>Silvaco 器件仿真软件功能介绍</h3>
+      <p>从 TCAD 在半导体开发中的位置出发，理解工艺仿真、器件结构、模型体系和 SiC JBS 结果分析。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/01-silvaco-introduction.html">打开第 1 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/atom.svg')" alt="" aria-hidden="true">
+        <span>Chapter 02</span>
+        <span>69 页</span>
+      </div>
+      <h3>TCAD 基础</h3>
+      <p>建立器件问题、数值离散、网格、物理模型与结果可信性之间的完整理论基础。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/02-tcad-basics.html">打开第 2 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/monitor.svg')" alt="" aria-hidden="true">
+        <span>Chapter 03</span>
+        <span>69 页</span>
+      </div>
+      <h3>TCAD 框架、交互工具与语法规则</h3>
+      <p>理解 DeckBuild、TonyPlot、运行流程、命令语义、文件类型和可追溯仿真记录。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/03-workflow-and-syntax.html">打开第 3 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/layers-3.svg')" alt="" aria-hidden="true">
+        <span>Chapter 04</span>
+        <span>72 页</span>
+      </div>
+      <h3>工艺仿真模块与流程</h3>
+      <p>从 ATHENA 模块、网格和初始化走向氧化、结构提取与功率器件工艺链设计。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/04-process-simulation.html">打开第 4 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/settings-2.svg')" alt="" aria-hidden="true">
+        <span>Chapter 05</span>
+        <span>72 页</span>
+      </div>
+      <h3>关键工艺步骤与参数校准</h3>
+      <p>系统讲解注入、扩散、薄膜、刻蚀、外延、光刻、优化实验与参数校准。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/05-process-steps-and-calibration.html">打开第 5 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/cpu.svg')" alt="" aria-hidden="true">
+        <span>Chapter 06</span>
+        <span>69 页</span>
+      </div>
+      <h3>器件仿真模块与流程</h3>
+      <p>建立 ATLAS 器件仿真的结构、材料、模型、数值求解、特性提取和结果证据链。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/06-device-simulation.html">打开第 6 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/sliders-horizontal.svg')" alt="" aria-hidden="true">
+        <span>Chapter 07</span>
+        <span>69 页</span>
+      </div>
+      <h3>器件结构、物理模型与结果分析</h3>
+      <p>深入结构编辑、材料参数、物理模型、DC/AC、瞬态、热学与结果解释。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/07-device-structure-models-results.html">打开第 7 章课件 <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="chapter-card">
+      <div class="chapter-card__meta">
+        <img :src="$withBase('/presentation/assets/icons/zap.svg')" alt="" aria-hidden="true">
+        <span>Chapter 08</span>
+        <span>69 页</span>
+      </div>
+      <h3>功率器件仿真</h3>
+      <p>围绕 PiN、SiC JBS、肖特基二极管、MOSFET、IGBT 和保护环建立综合案例。</p>
+      <a href="/microelectronic-device-modeling-sim/presentation/08-power-device-simulation.html">打开第 8 章课件 <span aria-hidden="true">→</span></a>
+    </article>
   </div>
 </section>
 
@@ -133,15 +203,10 @@ toc: false
       <span>八章安排、每次三节、考核节点与阶段任务</span>
       <i>查看计划</i>
     </a>
-    <a href="/microelectronic-device-modeling-sim/presentation/">
-      <strong>教学演示</strong>
-      <span>课堂 PPT、软件功能介绍和仿真案例</span>
-      <i>打开目录</i>
-    </a>
-    <a href="/microelectronic-device-modeling-sim/presentation/01-silvaco-introduction.html">
-      <strong>第 1 章</strong>
-      <span>Silvaco 器件仿真软件功能介绍</span>
-      <i>开始学习</i>
+    <a href="/microelectronic-device-modeling-sim/#chapters">
+      <strong>课程章节</strong>
+      <span>八章课件简介与直接入口</span>
+      <i>选择章节</i>
     </a>
     <a href="https://github.com/zhouxzh/microelectronic-device-modeling-sim">
       <strong>课程仓库</strong>

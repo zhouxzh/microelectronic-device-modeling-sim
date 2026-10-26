@@ -11,7 +11,7 @@ export default defineUserConfig({
   description: "研究生选修课：微电子器件建模与仿真",
   pagePatterns: [
     "**/*.md",
-    "!presentation/[0-9][0-9]-*.md",
+    "!presentation/**",
     "!.vuepress",
     "!node_modules",
   ],

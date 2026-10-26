@@ -6,6 +6,8 @@ import { spawnSync } from "node:child_process";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceDir = path.join(root, "src", "presentation");
 const outputDir = path.join(root, "src", ".vuepress", "public", "presentation");
+const assetSourceDir = path.join(sourceDir, "assets");
+const assetOutputDir = path.join(outputDir, "assets");
 const themePath = path.join(sourceDir, "theme.css");
 const marpPath = path.join(root, "node_modules", "@marp-team", "marp-cli", "marp-cli.js");
 
@@ -22,6 +24,8 @@ fs.mkdirSync(outputDir, { recursive: true });
 for (const name of fs.readdirSync(outputDir)) {
   if (name.endsWith(".html")) fs.rmSync(path.join(outputDir, name), { force: true });
 }
+fs.rmSync(assetOutputDir, { recursive: true, force: true });
+fs.cpSync(assetSourceDir, assetOutputDir, { recursive: true });
 
 for (const file of sources) {
   const source = path.join(sourceDir, file);

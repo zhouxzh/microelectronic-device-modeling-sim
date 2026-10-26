@@ -22,10 +22,9 @@ export default navbar([
     link: "/#assessment",
   },
   {
-    text: "教学演示",
-    link: "/presentation/",
+    text: "课程章节",
+    link: "/#chapters",
     icon: "presentation",
-    activeMatch: "^/presentation/",
   },
   {
     text: "课程资料",

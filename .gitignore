@@ -5,6 +5,7 @@ src/.vuepress/.temp/
 src/.vuepress/.cache/
 src/.vuepress/dist/
 src/.vuepress/public/presentation/*.html
+src/.vuepress/public/presentation/assets/
 /reference/
 .env
 .DS_Store
