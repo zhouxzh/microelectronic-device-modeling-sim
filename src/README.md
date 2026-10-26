@@ -10,7 +10,7 @@ toc: false
 # 微电子器件建模与仿真
 
 <section class="course-hero">
-  <img class="course-hero__image" :src="$withBase('/images/hero-optoelectronic-simulation.png')" alt="光电器件仿真中的光生载流子产生率分布">
+  <img class="course-hero__image" :src="$withBase('/images/chapter-sic-jbs.png')" alt="SiC JBS 保护环结构的反向电流电压仿真结果">
   <div class="course-hero__inner">
     <p class="course-kicker">研究生选修课</p>
     <h1>微电子器件<br><span>建模与仿真</span></h1>
@@ -26,7 +26,7 @@ toc: false
       <a class="secondary" href="/microelectronic-device-modeling-sim/plan/">查看教学计划</a>
     </div>
   </div>
-  <span class="course-hero__source">课程组整理：光电器件仿真结果</span>
+  <span class="course-hero__source">课程组整理：SiC JBS 功率器件仿真结果</span>
 </section>
 
 <div class="course-band">
