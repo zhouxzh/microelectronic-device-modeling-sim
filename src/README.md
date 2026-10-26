@@ -23,10 +23,10 @@ toc: false
     </div>
     <div class="course-actions">
       <a class="primary" href="/microelectronic-device-modeling-sim/presentation/01-silvaco-introduction.html">开始第 1 章</a>
-      <a class="secondary" href="#course-path">查看课程主线</a>
+      <a class="secondary" href="/microelectronic-device-modeling-sim/plan/">查看教学计划</a>
     </div>
   </div>
-  <span class="course-hero__source">课程图片：光电器件仿真结果</span>
+  <span class="course-hero__source">课程组整理：光电器件仿真结果</span>
 </section>
 
 <div class="course-band">
@@ -128,6 +128,11 @@ toc: false
   <p class="course-eyebrow">Resources</p>
   <h2>课程资料</h2>
   <div class="course-resource-list">
+    <a href="/microelectronic-device-modeling-sim/plan/">
+      <strong>教学计划</strong>
+      <span>八章安排、每次三节、考核节点与阶段任务</span>
+      <i>查看计划</i>
+    </a>
     <a href="/microelectronic-device-modeling-sim/presentation/">
       <strong>教学演示</strong>
       <span>课堂 PPT、软件功能介绍和仿真案例</span>

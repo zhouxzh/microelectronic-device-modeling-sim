@@ -19,6 +19,7 @@
 ## 内容导航
 
 - [课程介绍](src/README.md)
+- [教学计划](src/plan/README.md)
 - [教学演示（PPT）](src/presentation/README.md)
 
 ## 本地开发

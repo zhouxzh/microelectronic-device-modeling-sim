@@ -459,3 +459,14 @@ SiC JBS 结构的击穿仿真可以比较不同保护环数量下的反向电流
 **下一步：从一个明确的器件问题出发，建立可复现的仿真输入和输出。**
 
 <!-- 讲师备注：收束本章，并为学生的 PPT/报告选题建立统一的技术表达框架。 -->
+
+---
+
+# 本章参考文献
+
+<ol class="reference-list">
+<li>SILVACO INTERNATIONAL. <em>Power Device Physics Revealed: TCAD for Power Device Technologies</em>[Z]. Silvaco International, 2010.</li>
+<li>COURSE TEAM. <em>Silvaco Device Simulation Software: Function Overview</em>[Z]. Course materials, 2026.</li>
+</ol>
+
+<!-- 讲师备注：正式文献用于说明功率器件案例和本章课件的来源。 -->

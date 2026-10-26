@@ -12,6 +12,12 @@ export default navbar([
     link: "/#course-path",
   },
   {
+    text: "教学计划",
+    link: "/plan/",
+    icon: "calendar",
+    activeMatch: "^/plan/",
+  },
+  {
     text: "考核说明",
     link: "/#assessment",
   },
