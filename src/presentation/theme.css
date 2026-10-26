@@ -1,0 +1,50 @@
+/* @theme microelectronics */
+@import "default";
+
+:root {
+  --ink: #17212b;
+  --muted: #607080;
+  --paper: #ffffff;
+  --panel: #eef4f7;
+  --accent: #087e8b;
+  --accent-dark: #07505a;
+  --warm: #e07a3f;
+  --line: #d5e1e5;
+  --code: #17212b;
+}
+
+section {
+  box-sizing: border-box;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  padding: 62px 72px 78px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+section::before { content: ""; position: absolute; inset: 0 0 auto; height: 8px; background: var(--accent); }
+section::after { color: var(--muted); right: 40px; bottom: 20px; font-size: 14px; }
+header, footer { position: absolute; color: var(--muted); font-size: 14px; }
+header { top: 25px; left: 72px; font-weight: 600; }
+footer { left: 72px; bottom: 20px; }
+h1, h2, h3 { margin: 0 0 0.45em; line-height: 1.08; letter-spacing: 0; }
+h1 { font-size: 46px; color: var(--accent-dark); }
+h2 { font-size: 36px; color: var(--accent-dark); }
+h3 { font-size: 28px; color: var(--accent); }
+p, ul, ol, table, blockquote, pre { margin: 0.4em 0; }
+li { margin: 0.18em 0; }
+strong { color: var(--accent-dark); }
+blockquote { padding: 14px 20px; border-left: 6px solid var(--warm); background: var(--panel); }
+table { width: 100%; border-collapse: collapse; font-size: 22px; }
+th, td { padding: 9px 12px; border: 1px solid var(--line); text-align: left; }
+th { color: white; background: var(--accent-dark); }
+pre { padding: 16px 20px; background: var(--code); color: #eff7f8; font-size: 20px; }
+code { color: var(--accent-dark); background: var(--panel); }
+section.lead { justify-content: center; background: var(--accent-dark); color: #fff; }
+section.lead h1, section.lead h2 { color: #fff; }
+section.lead h1 { font-size: 58px; }
+section.lead h2 { color: #d9eef0; font-weight: 400; }

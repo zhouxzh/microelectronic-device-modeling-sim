@@ -1,3 +1,14 @@
+node_modules/
+.tmp/
+tmp/
+src/.vuepress/.temp/
+src/.vuepress/.cache/
+src/.vuepress/dist/
+src/.vuepress/public/presentation/*.html
+/reference/
+.env
+.DS_Store
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
