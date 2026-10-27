@@ -447,12 +447,135 @@ SiC JBS 结构的击穿仿真可以比较不同保护环数量下的反向电流
 
 ---
 
+# 从 TCAD 走向流片：2024 年 IGBT 设计案例
+
+<table>
+<tr><th>项目</th><th>本案例设定</th></tr>
+<tr><td>器件</td><td>1200 V / 50 A 级 IGBT</td></tr>
+<tr><td>制造平台</td><td>0.5 μm 工艺</td></tr>
+<tr><td>栅结构</td><td>平面栅</td></tr>
+<tr><td>有源区元胞</td><td>条形元胞</td></tr>
+<tr><td>终端</td><td>场限环</td></tr>
+<tr><td>配套控制芯片</td><td>0.5 μm、700 V BCD 栅极驱动芯片</td></tr>
+</table>
+
+<!-- 讲师备注：这组参数来自课程组的2024年IGBT流片资料。先给出设计目标和技术路线，后续再区分目标值、实测值和待补充的测试条件。 -->
+
+---
+
+# IGBT 把 MOS 栅控与双极电导调制结合起来
+
+<div class="icon-grid">
+<div><h3>绝缘栅</h3><p>栅极通过介质控制沟道，输入阻抗高，稳态驱动电流小。</p></div>
+<div><h3>双极注入</h3><p>导通时电子和空穴共同参与导电，漂移区发生电导调制。</p></div>
+<div><h3>低通态压降</h3><p>大电流下比同等耐压的单极 MOSFET 更容易降低导通损耗。</p></div>
+<div><h3>关断拖尾</h3><p>存储的少数载流子需要释放，关断速度与损耗形成折中。</p></div>
+<div><h3>耐压主体</h3><p>反向阻断主要由漂移区和终端结构承担。</p></div>
+<div><h3>控制目标</h3><p>在耐压、通态压降、开关损耗和可靠性之间取得平衡。</p></div>
+</div>
+
+<!-- 讲师备注：IGBT可等效看成MOS栅控输入与PNP双极注入的结合。重点说明电导调制为什么降低通态压降，同时为什么带来关断存储电荷。 -->
+
+---
+
+# 结构选择对应明确的电学取舍
+
+<table>
+<tr><th>设计选择</th><th>主要目的</th><th>需要关注的代价</th></tr>
+<tr><td>平面栅</td><td>降低栅极电容和沟槽工艺复杂度</td><td>沟道密度与通态压降不如沟槽栅</td></tr>
+<tr><td>条形元胞</td><td>兼顾耐压、通态压降和抗闩锁能力</td><td>有源区面积利用率需要权衡</td></tr>
+<tr><td>场限环终端</td><td>降低结边缘和表面电场峰值</td><td>环宽、环间距和表面电荷都影响耐压</td></tr>
+<tr><td>0.5 μm 工艺</td><td>在制造成本与控制能力之间取得平衡</td><td>线宽、对准和工艺窗口必须稳定</td></tr>
+</table>
+
+<div class="icon-callout">
+<img src="assets/icons/scale.svg" alt="权衡图标">
+<p>器件设计不是单独追求最低通态压降，而是在耐压、损耗、开关速度和可靠性之间建立可制造的工作窗口。</p>
+</div>
+
+<!-- 讲师备注：这些选择来自流片报告的方案说明。讲授时把每个几何选择映射到电场、电容、电流密度或工艺复杂度，不讲成孤立的版图术语。 -->
+
+---
+
+# IGBT 版图与封装实物相互对应
+
+<div class="result-single compact">
+<img src="assets/ch01/igbt-layout-package.png" alt="1200伏50安IGBT芯片版图和三端封装实物">
+</div>
+
+<p class="small-note">课程组 2024 年流片资料：左侧为芯片版图与局部元胞，右侧为三端封装实物。</p>
+
+<!-- 讲师备注：先让学生找到有源区、终端区和电极连接，再对应封装中的三个功率端子。图像用于说明设计如何落到芯片与封装，不据外观推断未记录的尺寸。 -->
+
+---
+
+# 流片实测结果超过原设计目标
+
+<div class="icon-grid">
+<div><img src="assets/icons/target.svg" alt="目标图标"><h3>设计目标</h3><p>阻断电压 1200 V，最大导通电流 50 A。</p></div>
+<div><img src="assets/icons/zap.svg" alt="耐压图标"><h3>实测耐压</h3><p>报告给出的最高阻断电压为 1400 V。</p></div>
+<div><img src="assets/icons/gauge.svg" alt="电流图标"><h3>实测电流</h3><p>报告给出的最大导通电流为 70 A。</p></div>
+</div>
+
+<div class="icon-callout">
+<img src="assets/icons/triangle-alert.svg" alt="条件提示图标">
+<p>流片报告未在这页列出漏电判据、测试温度、栅压和脉冲条件；这些条件必须在正式仿真校准前补齐。</p>
+</div>
+
+<!-- 讲师备注：明确区分设计目标和报告中的实测摘要。1400 V与70 A是很有价值的流片证据，但没有测试条件时不能直接作为TCAD曲线逐点拟合目标。 -->
+
+---
+
+# 配套栅极驱动芯片补全开关接口
+
+<div class="split compact">
+<div>
+<h3>驱动芯片定位</h3>
+<ul>
+<li>采用 0.5 μm、700 V BCD 工艺定制。</li>
+<li>接收控制侧信号并形成 IGBT 栅极驱动。</li>
+<li>目标是改善开关速度、降低开关损耗并提高模块可靠性。</li>
+<li>课程只讨论器件栅极边界，不展开驱动电路设计。</li>
+</ul>
+</div>
+<figure>
+<img src="assets/ch01/igbt-gate-driver.png" alt="IGBT栅极驱动芯片内部互连与键合照片组">
+<figcaption>驱动芯片内部互连和键合结构</figcaption>
+</figure>
+</div>
+
+<!-- 讲师备注：驱动芯片是IGBT模块的实际栅极边界。这里只说明其工艺等级、电压等级和对器件开关的作用，不进入电路拓扑和控制系统设计。 -->
+
+---
+
+# 实测流片结果如何反哺 TCAD
+
+<div class="process-flow">
+<span>补充测试条件</span>
+<span>重建结构</span>
+<span>校准模型</span>
+<span>独立验证</span>
+</div>
+
+- 记录阻断测试的漏电判据、温度和栅极偏压。
+- 记录通态测试的栅压、脉冲宽度、结温和电流路径。
+- 用版图、工艺剖面和终端尺寸重建可计算结构。
+- 分别校准通态、阻断和开关结果，不追求用单条曲线解释全部现象。
+- 保留未参与拟合的温度或偏压数据作为独立验证。
+
+<div class="emphasis-box">实测值证明设计达到目标；只有带完整条件的曲线才能成为模型校准和预测的证据。</div>
+
+<!-- 讲师备注：把流片结果连接到课程主线：TCAD不是替代实测，而是用实测约束模型，再用独立工况检验模型是否能预测。 -->
+
+---
+
 # 本章小结
 
-- TCAD 连接工艺、器件、实验和电路模型。
+- TCAD 连接工艺、器件、实验和可靠性评估。
 - 工艺仿真通过结构、网格、材料和工艺历史生成器件输入。
-- 光学、热学和电学模型需要根据问题目标选择复杂度。
+- 电热和电学模型需要根据功率器件工作区选择复杂度。
 - SiC JBS 案例说明：结构设计最终要通过电场、电势、电流密度和击穿曲线验证。
+- 2024 年 IGBT 流片案例说明：设计目标、版图、封装和实测结果必须放在同一证据链中。
 
 **下一步：从一个明确的器件问题出发，建立可复现的仿真输入和输出。**
 
@@ -465,6 +588,7 @@ SiC JBS 结构的击穿仿真可以比较不同保护环数量下的反向电流
 <ol class="reference-list">
 <li>SILVACO INTERNATIONAL. <em>Power Device Physics Revealed: TCAD for Power Device Technologies</em>[Z]. Silvaco International, 2010.</li>
 <li>COURSE TEAM. <em>Silvaco Device Simulation Software: Function Overview</em>[Z]. Course materials, 2026.</li>
+<li>COURSE TEAM. <em>2024 IGBT Tape-out and Device Design Report</em>[Z]. Course materials, 2024.</li>
 </ol>
 
 <!-- 讲师备注：正式文献用于说明功率器件案例和本章课件的来源。 -->

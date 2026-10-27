@@ -89,10 +89,10 @@ toc: false
       <div class="chapter-card__meta">
         <img :src="$withBase('/presentation/assets/icons/circuit-board.svg')" alt="" aria-hidden="true">
         <span>Chapter 01</span>
-        <span>34 页</span>
+        <span>41 页</span>
       </div>
       <h3>Silvaco 器件仿真软件功能介绍</h3>
-      <p>从 TCAD 在半导体开发中的位置出发，理解工艺仿真、器件结构、模型体系和 SiC JBS 结果分析。</p>
+      <p>从 TCAD 基础走到实际流片，包含 SiC JBS 仿真与 2024 年 1200 V / 50 A IGBT 版图、封装和实测结果。</p>
       <a href="/microelectronic-device-modeling-sim/presentation/01-silvaco-introduction.html">打开第 1 章课件 <span aria-hidden="true">→</span></a>
     </article>
     <article class="chapter-card">
